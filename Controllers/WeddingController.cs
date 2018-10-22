@@ -30,7 +30,7 @@ namespace Planner.Controllers
         {
             if(ActiveUser == null)
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Home");
             }
             List<Wedding> weddings = _wContext.weddings
                 .Include(u => u.User)
@@ -45,7 +45,7 @@ namespace Planner.Controllers
         {
             if(ActiveUser == null)
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Home");
             }
             ViewBag.user = ActiveUser;
             return View();
@@ -55,7 +55,7 @@ namespace Planner.Controllers
         {
             if(ActiveUser == null)
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Home");
             }
             if(ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace Planner.Controllers
                     wedding_id = wed.wedding_id,
                     wedder_one = wed.wedder_one,
                     wedder_two = wed.wedder_two,
-                    location = wed.location,
+                    address = wed.address,
                     event_date = wed.event_date
                 };
                 _wContext.weddings.Add(wedding);
@@ -84,7 +84,7 @@ namespace Planner.Controllers
         {
             if(ActiveUser == null) 
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Home");
             }
             Wedding wedding = _wContext.weddings
                 .Include(u => u.User)
@@ -99,6 +99,24 @@ namespace Planner.Controllers
             ViewBag.guests = guests;
             ViewBag.user = ActiveUser;
             return View();
+        }
+        [Route("Dashboard/AddRsvp/{wedding_id}")]
+        public IActionResult AddRsvp(int wedding_id)
+        {
+            if(ActiveUser == null) 
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            Guest guest = new Guest
+            {
+                pending = 1,
+                user_id = ActiveUser.user_id,
+                wedding_id = wedding_id
+            };
+            _wContext.guests.Add(guest);
+            _wContext.SaveChanges();
+            ViewBag.user = ActiveUser;
+            return RedirectToAction("Dashboard", "Wedding");
         }
         public IActionResult Error()
         {

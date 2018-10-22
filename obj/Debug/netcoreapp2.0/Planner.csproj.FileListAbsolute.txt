@@ -1,0 +1,11 @@
+E:\csharp\KevinStradtman\Planner\bin\Debug\netcoreapp2.0\Planner.deps.json
+E:\csharp\KevinStradtman\Planner\bin\Debug\netcoreapp2.0\Planner.runtimeconfig.json
+E:\csharp\KevinStradtman\Planner\bin\Debug\netcoreapp2.0\Planner.runtimeconfig.dev.json
+E:\csharp\KevinStradtman\Planner\bin\Debug\netcoreapp2.0\Planner.dll
+E:\csharp\KevinStradtman\Planner\bin\Debug\netcoreapp2.0\Planner.pdb
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.csprojResolveAssemblyReference.cache
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.csproj.CoreCompileInputs.cache
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.AssemblyInfoInputs.cache
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.AssemblyInfo.cs
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.dll
+E:\csharp\KevinStradtman\Planner\obj\Debug\netcoreapp2.0\Planner.pdb

@@ -1,0 +1,55 @@
+
+@{
+    ViewData["Title"] = "Wedding Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mt-5 mb-5">
+                <div class="card-header text-center">
+                    <h1>Planner: @ViewBag.user.first_name @ViewBag.user.last_name</h1>
+                </div>
+                <div class="card-body text-center">
+                    <table class="table table-hover text-center shadow-lg">
+                        <thead class="bg-info text-white">
+                            <tr>
+                                <th>Wedding</th>
+                                <th>Event Date</th>
+                                <th>Guests</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var w in ViewBag.weddings)
+                            {
+                                <tr>
+                                    <td><a href="Dashboard/Wedding/@w.wedding_id" class="wedders">@w.wedder_one <span class="and">&amp;</span> @w.wedder_two</a></td>
+                                    <td>@w.event_date</td>
+                                    <td>@w.Guests.Count</td>
+                                    <td>
+                                         @if(ViewBag.user.user_id == w.User.user_id)
+                                        {
+                                            <span><a href="" class="btn btn-danger btn-round shadow-lg">Delete</a></span>
+                                        }
+                                        @foreach(var guest in w.Guests)
+                                        {
+                                            @if(guest.pending != 1) 
+                                            {
+                                                <span><a href="" class="btn btn-info btn-round shadow-lg">RSVP</a></span>
+                                            }
+                                            else
+                                            {
+                                                <span><a href="" class="btn btn-warning text-white btn-round shadow-lg">UN-RSVP</a></span>
+                                            }
+                                        }
+                                    </td>
+                                </tr>   
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

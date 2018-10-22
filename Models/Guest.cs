@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Planner.Models
 {
-    public class Guest : BaseEntity
+    public class Guest
     {
         [Key]
         public int guest_id {get;set;}
@@ -17,8 +17,6 @@ namespace Planner.Models
         public byte pending {get;set;}
         public Guest()
         {
-            created_at = DateTime.Now;
-            updated_at = DateTime.Now;
             pending = 0;
         }
     }

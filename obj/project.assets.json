@@ -12741,11 +12741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\csharp\\KevinStradtman\\Planner\\Planner.csproj",
+      "projectUniqueName": "E:\\csharp\\KevinStradtman\\Planner\\Planner.csproj",
       "projectName": "Planner",
-      "projectPath": "e:\\csharp\\KevinStradtman\\Planner\\Planner.csproj",
+      "projectPath": "E:\\csharp\\KevinStradtman\\Planner\\Planner.csproj",
       "packagesPath": "C:\\Users\\strad\\.nuget\\packages\\",
-      "outputPath": "e:\\csharp\\KevinStradtman\\Planner\\obj\\",
+      "outputPath": "E:\\csharp\\KevinStradtman\\Planner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

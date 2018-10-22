@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Add Wedding";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card p-5 mt-5 mb-5">
+                <div class="card-header text-center">
+                    <h1>@ViewData["Title"]</h1>
+                </div>
+                <div class="card-body">
+                    <form asp-action="PostWedding" asp-controller="Wedding" method="POST">
+                        <div class="form-group">
+                            <input type="text" asp-for="wedder_one" class="form-control" placeholder="Wedder One">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="wedder_two" class="form-control" placeholder="Wedder Two">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="address" class="form-control" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="date-local" asp-for="event_date" class="form-control" placeholder="Event Date">
+                        </div>
+                        <input type="submit" value="Add Wedding" class="btn btn-success btn-round">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

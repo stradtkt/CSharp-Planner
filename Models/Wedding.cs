@@ -13,7 +13,7 @@ namespace Planner.Models
         public string wedder_one {get;set;}
         public string wedder_two {get;set;}
         public DateTime event_date {get;set;}
-        public string location {get;set;}
+        public string address {get;set;}
 
         public List<Guest> Guests {get;set;}
 

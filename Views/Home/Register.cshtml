@@ -5,8 +5,9 @@
 <div class="container">
     <div class="row">
     <div class="col-md-6 offset-3">
+        <div class="card p-5 mt-5 mb-5">
         <h1 class="text-center">@ViewData["Title"]</h1>
-        <form asp-action="RegisterUser" asp-controller="Home" method="POST">
+        <form asp-action="RegisterUser" asp-controller="Home" method="POST" class="text-center">
             <div class="form-group">
                 <div class="bg-danger">
                     <span asp-validation-for="first_name"></span>
@@ -39,6 +40,7 @@
             </div>
             <input type="submit" value="Register" class="btn btn-success btn-round">
         </form>
+    </div>
     </div>
 </div>
 <div class="row">

@@ -10,10 +10,10 @@ using Planner.Models;
 
 namespace Planner.Controllers
 {
-    public class UserController : Controller
+    public class HomeController : Controller
     {
         private WeddingContext _wContext;
-        public UserController(WeddingContext context)
+        public HomeController(WeddingContext context)
         {
             _wContext = context;
         }
@@ -25,12 +25,6 @@ namespace Planner.Controllers
             }
         }
         [HttpGet("")]
-        public IActionResult Index()
-        {
-            ViewBag.user = ActiveUser;
-            return View();
-        }
-        [HttpGet("register")]
         public IActionResult Register()
         {
             ViewBag.user = ActiveUser;
@@ -54,7 +48,7 @@ namespace Planner.Controllers
             if(CheckEmail != null)
             {
                 ViewBag.errors = "That email already exists";
-                return RedirectToAction("Register");
+                return RedirectToAction("Register","Home");
             }
             if(ModelState.IsValid)
             {
@@ -70,11 +64,11 @@ namespace Planner.Controllers
                 _wContext.Add(newUser);
                 _wContext.SaveChanges();
                 ViewBag.success = "Successfully registered";
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
-                return View("Register");
+                return View("Register", "Home");
             }
         }
 
@@ -95,13 +89,13 @@ namespace Planner.Controllers
                 else
                 {
                     ViewBag.errors = "Incorrect Password";
-                    return View("Register");
+                    return View("Register", "Home");
                 }
             }
             else
             {
                 ViewBag.errors = "Email not registered";
-                return View("Register");
+                return View("Register", "Home");
             }
         }
 
