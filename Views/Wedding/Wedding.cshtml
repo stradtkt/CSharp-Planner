@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Wedding Info";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-1">
+            <div class="card p-3 mt-5 mb-5">
+                <div class="card-header text-center">
+                    <h1 class="wedders-h1">@ViewBag.wedding.wedder_one <span class="and">&amp;</span> @ViewBag.wedding.wedder_two</h1>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Host: @ViewBag.wedding.User.first_name @ViewBag.wedding.User.last_name</p>
+                    <p>Address: @ViewBag.wedding.address</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

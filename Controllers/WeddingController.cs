@@ -66,6 +66,7 @@ namespace Planner.Controllers
                 }
                 Wedding wedding = new Wedding 
                 {
+                    user_id = ActiveUser.user_id,
                     wedding_id = wed.wedding_id,
                     wedder_one = wed.wedder_one,
                     wedder_two = wed.wedder_two,
@@ -116,6 +117,26 @@ namespace Planner.Controllers
             _wContext.guests.Add(guest);
             _wContext.SaveChanges();
             ViewBag.user = ActiveUser;
+            return RedirectToAction("Dashboard", "Wedding");
+        }
+
+        [HttpGet("Dashboard/DeleteWedding/{wedding_id}")]
+        public IActionResult DeleteWedding(int wedding_id)
+        {
+            if(ActiveUser == null) 
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            Wedding toDelete = _wContext.weddings
+                .Where(w => w.wedding_id == wedding_id)
+                .SingleOrDefault();
+            List<Guest> guest = _wContext.guests
+                .Include(w => w.Wedding)
+                .Where(w => w.wedding_id == wedding_id)
+                .ToList();
+            _wContext.guests.RemoveRange(guest);
+            _wContext.weddings.Remove(toDelete);
+            _wContext.SaveChanges();
             return RedirectToAction("Dashboard", "Wedding");
         }
         public IActionResult Error()

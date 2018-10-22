@@ -1,3 +1,4 @@
+@model Planner.Models.PostWedding
 @{
     ViewData["Title"] = "Add Wedding";
 }
@@ -21,7 +22,7 @@
                             <input type="text" asp-for="address" class="form-control" placeholder="Address">
                         </div>
                         <div class="form-group">
-                            <input type="date-local" asp-for="event_date" class="form-control" placeholder="Event Date">
+                            <input type="datetime-local" asp-for="event_date" class="form-control" placeholder="Event Date">
                         </div>
                         <input type="submit" value="Add Wedding" class="btn btn-success btn-round">
                     </form>

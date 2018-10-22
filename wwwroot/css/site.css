@@ -21,3 +21,15 @@ td a:hover {
 .row {
     margin: 5% 0 0 0;
 }
+h1.wedders-h1 {
+    font-family: 'Charmonman', cursive;
+    text-decoration: none;
+    color: #777;
+    text-shadow: 2px 2px 3px dodgerblue;
+}
+h1.wedders-h1 .and {
+    font-family: 'Charmonman', cursive;
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 25px;
+}

@@ -30,7 +30,7 @@
                                     <td>
                                          @if(ViewBag.user.user_id == w.User.user_id)
                                         {
-                                            <span><a href="" class="btn btn-danger btn-round shadow-lg">Delete</a></span>
+                                            <span><a href="Dashboard/DeleteWedding/@w.wedding_id" class="btn btn-danger btn-round shadow-lg">Delete</a></span>
                                         }
                                         @foreach(var guest in w.Guests)
                                         {
